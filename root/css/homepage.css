@@ -1,0 +1,165 @@
+/* mijn kleurenpalet in css variables voor gemakkelijkere aanpassingen aan kleuren */
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+:root{
+    --lightblue: #ccf3ff;
+    --backgroundblue: #427AA1;
+    --backgrounddarkblue: #05668D;
+    --textcolorlight: #EBF2FA;
+    --backgroundgreen: #157F1F;
+    --backgroundlightgreen: #4CB963;
+    --errorred: #cc0000;
+}
+
+img#wallpaper{
+    height: 100vh;
+    width: 100%;
+    margin-top: 0px;
+    
+    position: absolute;
+    top: 0;
+}
+
+#slogan{
+    margin: 50vh auto;
+    width: 100%;
+    text-align: center;
+    font-variant: small-caps;
+    color: white;
+    opacity: 1;
+    position: absolute;
+    font-size: 100px;
+}
+
+#slogan2{
+    font-family: 'Satisfy', cursive;
+    font-size: 40px;
+    color: white;
+    position: absolute;
+    margin: 70vh auto;
+    width: 100%;
+    text-align: center;
+}
+
+#container{
+    float: left;
+    width: 100%;
+    margin-top: 100vh;
+}
+
+.topAd{
+    float: left;
+    width: 90%;
+    height: 190px;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 70px;
+    font-variant: small-caps;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center center;
+    margin-top: 5%;
+    margin-bottom: 2.5%;
+    margin-left: 5%;
+}
+
+.ad{
+    width: 42.5%;
+    float: left;
+    margin-left: 5%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+    height: 180px;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 70px;
+    font-variant: small-caps;
+    box-sizing: border-box;
+    transition: 0.1s;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+#rackets{
+    background-image: url(../img/wallpaperracket.jpg);
+}
+
+#balls{
+    background-image: url(../img/wp1961377-table-tennis-wallpapers.jpg);
+}
+
+#shirts{
+    background-image: url(../img/sport-table-tennis-ping-pong-passion-wallpaper.jpg);
+    background-position: center 320px;
+}
+
+#store{
+    background-image: url(../img/table-tennis-wallpaper.jpg);
+}
+
+#shoes{
+    background-image: url(../img/photo-1542291026-7eec264c27ff.jpg);
+    background-position: center 180px;
+    margin-bottom: 5%;
+}
+
+#shorts{
+    background-image: url(../img/10636194-1-darkgrey.jpg);
+    background-position: center center;
+}
+
+#bags{
+    background-image: url(../img/679163238.jpg);
+    background-position: center center;
+}
+
+/* TABLET */
+
+@media screen and (max-width: 960px) and (min-width: 600px){
+    #slogan{
+        font-size: 50px;
+        margin: 50vh auto;
+    }
+
+    .topAd, .ad{
+        font-size: 50px;
+    }
+
+    #shirts{
+        background-image: url(../img/sport-table-tennis-ping-pong-passion-wallpaper.jpg);
+        background-position: center 200px;
+    }
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 600px)
+{
+    #slogan{
+        font-size: 45px;
+        margin: 50vh auto;
+    }
+
+    #slogan2{
+        font-size: 30px;
+        margin: 60vh auto;
+    }
+
+    .ad{
+        width: 90%;
+    }
+
+    .topAd, .ad{
+        height: 130px;
+        padding-top: 20px;
+        font-size: 30px;
+    }
+
+    #shoes{
+        background-image: url(../img/photo-1542291026-7eec264c27ff.jpg);
+        background-position: center 160px;
+        margin-bottom: 7.5%;
+    }
+}

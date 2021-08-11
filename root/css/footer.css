@@ -1,0 +1,51 @@
+/* mijn kleurenpalet in css variables voor gemakkelijkere aanpassingen aan kleuren */
+:root{
+    --lightblue: #ccf3ff;
+    --backgroundblue: #427AA1;
+    --backgrounddarkblue: #05668D;
+    --textcolorlight: #EBF2FA;
+    --backgroundgreen: #157F1F;
+    --backgroundlightgreen: #4CB963;
+    --errorred: #cc0000;
+}
+
+footer{
+    background: var(--backgroundblue);
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    position: absolute;
+    /* grid aanmaken */
+    display: grid;
+    grid-template-columns: 1fr minmax(100px,8fr) 1fr;
+    font-size: 80%;
+    bottom: 0;
+    font-family: 'Oxygen', sans-serif;
+}
+
+footer ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-column: 2/3;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+}
+
+footer ul li a{
+    text-decoration: none;
+    color: var(--textcolorlight);
+    margin: 13px;
+    text-transform: uppercase;
+}
+
+footer span{
+    color: var(--textcolorlight);
+    grid-column: 2/3;
+}
+
+img.flag{
+    margin-right: 25px;
+    margin-top: -5px;
+}

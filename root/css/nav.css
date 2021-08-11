@@ -1,0 +1,272 @@
+/* mijn kleurenpalet in css variables voor gemakkelijkere aanpassingen aan kleuren */
+:root{
+    --lightblue: #ccf3ff;
+    --backgroundblue: #427AA1;
+    --backgrounddarkblue: #05668D;
+    --textcolorlight: #EBF2FA;
+    --backgroundgreen: #157F1F;
+    --backgroundlightgreen: #4CB963;
+    --errorred: #cc0000;
+}
+
+header{
+    z-index: 100;
+    background: var(--backgroundblue);
+    color: var(--textcolorlight);
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: 'Oxygen', sans-serif;
+}
+
+/* de checkbox die mijn dropdown triggert, maar op invisible zodat. de hamburger wordt het visueel klikbare
+   zodat het wat mooier is */
+#nav-checker{
+    display: none;
+}
+
+/* de visuele checkbox, via label gelinkt */
+#nav-checker-hamburger{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 15px;
+    height: 100%;
+    /* de height 100% en de display flex en align items center zorgen dat de hamburger streepjes in
+       het midden komen */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* de span in het label een before en after geven en ze alle 3 stylen naar hamburger menu strepen */
+#nav-checker-hamburger span, #nav-checker-hamburger span::before, #nav-checker-hamburger span::after{
+    display: block;
+    background: var(--textcolorlight);
+    height: 2px;
+    width: 30px;
+    border-radius: 2px;
+    position: relative;
+}
+
+/* de before en after delen moeten IETS van content hebben voor ze zichtbaar te maken, maar tekst
+   wil ik niet */
+#nav-checker-hamburger span::before, #nav-checker-hamburger span::after{
+    content: "";
+}
+
+/* positioneren van de bovenste en onderste */
+#nav-checker-hamburger span::before{
+    bottom: 7px;
+}
+#nav-checker-hamburger span::after{
+    top: 6px;
+}
+
+nav{
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding-right: 15px;
+    padding-top: 10px;
+    background: var(--backgrounddarkblue);
+    /* transformeren van dezelfde breedte maar geen hoogte, naar volledig alles, met een smooth transition
+       van .3s (van boven koment, anders ziet het er raar uit) */
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: .3s ease-in-out;
+}
+/* stylen van de navbar en zijn items */
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+/* linken aanpassen in style, met hover in zwart */
+nav a{
+    color: var(--textcolorlight);
+    text-decoration: none;
+    text-transform: uppercase;
+    /* transition om in te klappen, instant */
+    opacity: 0;
+    transition: opacity .1s ease-in-out;
+}
+nav a:hover{
+    color: var(--textcolorlight);
+}
+
+/* nav die na een checked box komt wordt visible (ik wou geen javascript gebruiken) */
+#nav-checker:checked ~ nav{
+    transform: scale(1,1);
+}
+
+#nav-checker:checked ~ nav a{
+    /* transition om open te gaan, met een delay */
+    opacity: 1;
+    transition: opacity .1s ease-in-out .2s;
+}
+
+#logo{
+    margin-top: -6px;
+    margin-bottom: -6px;
+    transition: all .3s ease-in-out;
+    width: 100px;
+}
+#logo2{
+    width: 30px;
+}
+
+#numberInCart{
+    font-size: 60%;
+    background-color: var(--errorred);
+    color: white;
+    border: 2px solid var(--errorred);
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: -5px;
+    margin-left: -8px;
+    text-align: center;
+}
+
+#submitlogout{
+    margin: 0px;
+    margin-top: -10px;
+    border: 0px;
+    background-color: var(--backgrounddarkblue);
+    color: var(--textcolorlight);
+    text-transform: uppercase;
+    font-size: 100%;
+    cursor: pointer;
+    left: 0;
+    padding: 0px;
+    margin-left: -5px;
+    text-align: left;
+}
+
+
+/* ------------------------------------ TABLETS --------------------------------------------------------- */
+@media screen and (min-width: 600px)
+{
+#nav-checker-hamburger{
+    display: none;
+}
+
+header{
+    /* css grid aanmaken in de header, dan de plek voor het logo auto, de plek voor de nav minstens 
+       300px maar maximum 3/5de 'fr' delen opnemen die over blijven */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
+}
+
+header a {
+    grid-column: 1;
+}
+
+nav{
+    /* belangrijk dat ik alles terug naar normaal doe, want anders komen al die oude styles naar hier */
+    all: unset;
+    grid-column: 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+nav ul{
+    /* de list flex maken zodat ie niet onder elkaar staat */
+    display: flex;
+    /* alles naar rechts verschuiven (einde van de gridbox) */
+    justify-content: flex-end;
+}
+
+nav li{
+    /* juist zetten van margins (de mobile versie had margin bottom op de li's) */
+    margin-right: 30px;
+    margin-bottom: 0;
+}
+
+nav a{
+    opacity: 1;
+    position: relative;
+    font-size: 80%;
+}
+
+#submitlogout{
+    font-size: 80%;
+    background-color: var(--backgroundblue);
+    width: 4.5em;
+}
+
+#logo{
+    width: 100px;
+}
+#logo2{
+    width: 30px;
+    margin-top: -6px;
+}
+
+#numberInCart{
+    font-size: 65%;
+    background-color: var(--errorred);
+    color: white;
+    border: 2px solid var(--errorred);
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: -6px;
+    margin-left: -8px;    
+}
+}
+
+/* ------------------------------------ PC --------------------------------------------------------- */
+@media screen and (min-width: 960px)
+{
+header{
+    /* css grid aanpassen aan desktop */
+    grid-template-columns: 1fr auto minmax(600px,5fr) 1fr;
+}
+nav a{
+    font-size: 100%;
+}
+
+#submitlogout{
+    font-size: 100%;
+}
+
+#logo{
+    width: 100px;
+}
+
+#logo2{
+    width: 30px;
+    margin-top: -5px;
+}
+
+#numberInCart{
+    font-size: 55%;
+    background-color: var(--errorred);
+    color: white;
+    border: 2px solid var(--errorred);
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: -6px;
+    margin-left: -8px;    
+}
+}

@@ -1,0 +1,177 @@
+/* mijn kleurenpalet in css variables voor gemakkelijkere aanpassingen aan kleuren */
+:root{
+    --lightblue: #ccf3ff;
+    --backgroundblue: #427AA1;
+    --backgrounddarkblue: #05668D;
+    --textcolorlight: #EBF2FA;
+    --backgroundgreen: #157F1F;
+    --backgroundlightgreen: #4CB963;
+    --errorred: #cc0000;
+}
+
+html{
+    min-height:100%;
+    position:relative;
+}
+body{
+    height:100%; 
+}
+
+input{
+    width: 99%;
+}
+
+#overlay{
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+#popup{
+    width: 60%;
+    background-color: var(--textcolorlight);
+    position: fixed;
+    top: 2%;
+    left: 20%;
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 10px solid var(--backgroundblue);
+}
+
+#xknop{
+    position: absolute;
+    top: -2%;
+    right: 2%;
+    font-size: 300%;
+    color: var(--backgrounddarkblue);
+    transform: rotate(45deg);
+
+}
+
+#xknop:hover{
+    cursor: pointer;
+}
+
+form#loginform{
+    width: 100%;
+}
+
+#logintable{
+    width: 70%;
+}
+
+table{
+    margin: 0px auto;
+}
+
+input{
+    border-color: var(--backgrounddarkblue);
+    border-width: 2px;
+    color: var(--backgroundblue);
+    margin: 5px auto;
+    font-size: 110%;
+    padding: 3px 1px;
+}
+
+input::placeholder{
+    opacity: .4;
+}
+
+input#submit{
+    background-color: var(--backgroundblue);
+    color: var(--textcolorlight);
+    display: block;
+    border: 0;
+}
+
+input#submit:hover{
+    cursor: pointer;
+}
+
+input.registerField{
+    border-color: var(--backgroundlightgreen);
+}
+
+input#submit.registerField{
+    width: 92%;
+    border-color: var(--backgrounddarkblue);
+}
+
+input.regFullName, input.regEmail, input.regPassword{
+    width: 92%;
+}
+
+input.regStreet{
+    width: 45%;
+}
+
+input.regPostalCode, input.regNumber{
+    width: 21.5%;
+}
+
+.g-recaptcha{
+    position: relative;
+    left: 20%;
+}
+
+#pegasuslogin{
+    margin: 5px auto;
+    width: 15%;
+}
+
+#registreertd{
+    color: var(--backgrounddarkblue);
+}
+
+/* TABLET */
+@media screen and (max-width: 961px)
+{
+
+#xknop{
+    left: 5%;
+}
+
+#popup{
+    width: 80%;
+    left: 10%;
+}
+
+#pegasuslogin{
+    display: block;
+    margin-top: 20px;
+    width: 15%;
+}
+
+#logintable{
+    margin-top: 10px;
+}
+
+}
+
+/* MOBILE */
+@media screen and (max-width: 481px)
+{
+
+#xknop{
+    left: 5%;
+}
+
+#popup{
+    width: 80%;
+    left: 10%;
+}
+
+#pegasuslogin{
+    display: block;
+    margin-top: 20px;
+}
+
+#logintable, #registertable{
+    margin-top: -20px;
+}
+
+}

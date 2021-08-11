@@ -1,0 +1,50 @@
+/* mijn kleurenpalet in css variables voor gemakkelijkere aanpassingen aan kleuren */
+:root{
+    --lightblue: #ccf3ff;
+    --backgroundblue: #427AA1;
+    --backgrounddarkblue: #05668D;
+    --textcolorlight: #EBF2FA;
+    --backgroundgreen: #157F1F;
+    --backgroundlightgreen: #4CB963;
+    --errorred: #cc0000;
+}
+
+form#registrationform{
+    margin: 20px auto;
+    width: 60%;
+}
+
+h2{
+    margin: 120px auto;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+form#registrationform input{
+    width: 100%;
+}
+
+textarea{
+    width: 99%;
+    height: 100px;
+    border-bottom: 5px solid var(--backgroundblue);
+}
+
+#registrationsubmit{
+    background-color: var(--backgroundblue);
+    color: var(--textcolorlight);
+    cursor: pointer;
+    display: block;
+    margin-left: 2px;
+    border: 0;
+}
+
+footer{
+    position: absolute;
+    bottom: 0px;
+}
+
+#inviscustomer{
+    display: none;
+}
